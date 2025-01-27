@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransCity - Terminal de Buses</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a TransCity</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+
+                <!-- Mostrar 'Usuarios' solo si el usuario es administrador -->
+                {% if session.get('rol') == 'administrador' %}
+                    <li><a href="/usuarios">Usuarios</a></li>
+                {% endif %}
+
+                <li><a href="/rutas">Rutas</a></li>
+                <li><a href="/reservas">Reservas</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sobre nosotros</h2>
+            <p>TransCity es tu terminal de buses confiable para llegar a cualquier destino. ¡Viaja cómodo, seguro y a tiempo!</p>
+        </section>
+
+        <section>
+            <h2>Servicios</h2>
+            <ul>
+                <li>Reserva de pasajes online.</li>
+                <li>Consulta de rutas y horarios.</li>
+                <li>Atención al cliente personalizada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Próximos viajes</h2>
+            <p>Consulta nuestras rutas y horarios disponibles en la sección de rutas.</p>
+            <a href="/rutas" class="button">Ver Rutas</a>
+        </section>
+
+        <section>
+            <h3>No tienes cuenta? <a href="/registro">Crea una</a></h3>
+            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 TransCity. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
