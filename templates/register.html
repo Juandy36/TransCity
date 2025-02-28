@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - TransCity</title>
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/Logo-grupo-Ortiz_-Kevin_-Dussan_-Sofia_-Sara.ico') }}">
+
 </head>
 <body>
 
@@ -39,6 +41,14 @@
                 </div>
                 <div>
                     <p>¿Ya tienes cuenta? <a href="/login">Inicia Sesión</a></p>
+                </div>
+                <div>
+                    <a href="{{ url_for('google.login') }}">
+                        <button type="button" class="btn-google">
+                            <img src="{{ url_for('static', filename='img/google.png') }}" alt="Google logo" class="google-logo">
+                            registrate con Google
+                        </button>
+                    </a>
                 </div>
             </form>
         </section>

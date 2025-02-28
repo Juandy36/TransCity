@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TransCity</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/Logo-grupo-Ortiz_-Kevin_-Dussan_-Sofia_-Sara.ico') }}">
+
+    
+</head>
+<body>
+    <header>
+        <h1>Contacto</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/rutas">Rutas</a></li>
+                <li><a href="/reservas">Reservas</a></li>
+                <li><a href="/usuarios">Usuarios</a></li>
+                <li><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="contacto-info">
+            <h2>Información de Contacto</h2>
+            <p><strong>Teléfono:</strong> +57 310 123 4567</p>
+            <p><strong>Correo:</strong> contacto@transcity.com</p>
+            <p><strong>Dirección:</strong> Terminal de Buses, Calle 10 #20-30, Tame, Arauca</p>
+        </section>
+
+        <section class="formulario-container">
+            <h2>Envíanos un Mensaje</h2>
+            <form action="/enviar_mensaje" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 TransCity. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

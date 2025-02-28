@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TransCity - Terminal de Buses</title>
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/Logo-grupo-Ortiz_-Kevin_-Dussan_-Sofia_-Sara.ico') }}">
+
 </head>
 <body>
     <header>
@@ -47,8 +49,8 @@
         </section>
 
         <section>
-            <h3>No tienes cuenta? <a href="/registro">Crea una</a></h3>
-            <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+            <h3>Necesitas cerrar sesion?</h3>
+            <a href="{{ url_for('logout') }}">¡cierra tu sesion aqui!</a>
         </section>
     </main>
 
